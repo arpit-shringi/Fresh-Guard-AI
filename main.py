@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import uvicorn
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -7,7 +8,6 @@ from typing import Optional
 
 app = FastAPI(title="Fresh-Guard AI Backend")
 
-# Allow your React/Next.js frontend to talk to this backend without CORS errors
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -18,22 +18,34 @@ app.add_middleware(
 
 DB_FILE = Path("seed_inventory.json")
 
-# --- Helper Functions to Read & Save JSON Database ---
 def load_db():
     if not DB_FILE.exists():
         raise HTTPException(status_code=500, detail="seed_inventory.json not found!")
     with open(DB_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    # Prevent null price crashes in the frontend
+    for item in data.get("inventory", []):
+        if item.get("recommended_price") is None:
+            item["recommended_price"] = 0.0
+    return data
 
 def save_db(data):
     with open(DB_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-# --- Request Model for Manager Approval ---
 class ApprovalRequest(BaseModel):
     item_id: str
     approval_status: str  # "APPROVED" or "REJECTED"
     custom_price: Optional[float] = None
+
+
+# 0. HOME HEALTH CHECK ROUTE (Fixes 127.0.0.1:8000 "Not Found")
+@app.get("/")
+def root():
+    return {
+        "status": "Fresh-Guard AI Backend is live!",
+        "docs_url": "http://127.0.0.1:8000/docs"
+    }
 
 
 # 1. GET RECOMMENDATIONS (For Store Manager Audit Portal)
@@ -53,15 +65,14 @@ def approve_action(req: ApprovalRequest):
     db = load_db()
     for item in db.get("inventory", []):
         if item["item_id"] == req.item_id:
-            # Safety Guardrail: Never allow marketing spoiled food
             if item["freshness_status"] == "Spoiled" and req.approval_status == "APPROVED":
                 item["recommended_action"] = "REMOVE_FROM_SHELF"
+                item["recommended_price"] = 0.0
                 item["approval_status"] = "APPROVED"
                 save_db(db)
                 return {"message": f"Safety alert confirmed: {item['name']} marked for removal.", "item": item}
 
-            # Margin Floor Guardrail: Never allow price below min_allowed_price (Cost + 5%)
-            if req.custom_price is not None:
+            if req.custom_price is not None and req.custom_price > 0:
                 if req.custom_price < item["min_allowed_price"]:
                     raise HTTPException(
                         status_code=400,
@@ -89,17 +100,24 @@ def get_customer_feed():
     return {"promotions": approved_promos}
 
 
-# 4. UPLOAD SHELF IMAGE (Hook for Rishabh's Vision Engine & Arpit Sonar's SLM Engine)
+# 4. UPLOAD SHELF IMAGE
 @app.post("/upload-shelf")
 async def upload_shelf(file: UploadFile = File(...)):
     db = load_db()
-    # TODO: When Rishabh & Arpit Sonar finish their files, import and call:
-    # vision_results = analyze_shelf_image(file)
-    # pricing_results = calculate_pricing(vision_results)
-    # slm_results = generate_marketing_copy(pricing_results)
     return {
         "filename": file.filename,
         "status": "Image processed successfully",
         "detected_items": len(db.get("inventory", [])),
         "inventory": db.get("inventory", [])
     }
+
+
+if __name__ == "__main__":
+    # Runs Uvicorn while ignoring the frontend folder so node_modules never crashes Python
+    uvicorn.run(
+        "main:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=True,
+        reload_excludes=["frontend/*", "frontend/**"]
+    )

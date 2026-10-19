@@ -1,0 +1,224 @@
+{
+  "store_metadata": {
+    "store_id": "store_mum_01",
+    "margin_floor_Buffer_pct": 0.05,
+    "overstock_threshold_pct": 0.8,
+    "low_stock_threshold_pct": 0.2,
+    "last_camera_sync": "2026-10-19T09:00:00Z"
+  },
+  "tags": [
+    {
+      "tag_id": "tag_baking",
+      "tag_name": "Baking"
+    },
+    {
+      "tag_id": "tag_smoothie",
+      "tag_name": "Smoothie"
+    },
+    {
+      "tag_id": "tag_mexican",
+      "tag_name": "Guacamole & Fiesta"
+    },
+    {
+      "tag_id": "tag_pasta",
+      "tag_name": "Italian Dinner"
+    },
+    {
+      "tag_id": "tag_breakfast",
+      "tag_name": "Healthy Breakfast"
+    }
+  ],
+  "inventory": [
+    {
+      "item_id": "prod_101",
+      "name": "Cavendish Bananas (1 Dozen)",
+      "category": "Produce",
+      "is_perishable": true,
+      "tags": [
+        "tag_baking",
+        "tag_smoothie",
+        "tag_breakfast"
+      ],
+      "cost_price": 30.0,
+      "original_price": 60.0,
+      "min_allowed_price": 31.5,
+      "stock_count": 42,
+      "shelf_capacity": 50,
+      "current_stock_pct": 0.84,
+      "freshness_score": 0.35,
+      "freshness_status": "Overripe",
+      "cv_confidence": 0.94,
+      "recommended_action": "BUNDLE_AND_MARKDOWN",
+      "recommended_price": 40.0,
+      "bundle_partner_id": "prod_102",
+      "merchandising_note": "Pair Overripe Bananas (33% markdown) with overstocked Whole Wheat Flour (92% stock) on end-cap display for Banana Bread.",
+      "approval_status": "APPROVED",
+      "slm_generated": {
+        "headline": "Bake Tonight: Zero-Waste Banana Bread Bundle!",
+        "discount_badge": "Save ₹20 + 10% Off Flour Combo",
+        "recipe_title": "3-Ingredient Caramelized Banana Bread",
+        "ingredients": [
+          "3 Overripe Bananas",
+          "2 Cups Whole Wheat Flour",
+          "1/2 Cup Jaggery or Honey"
+        ],
+        "instructions": [
+          "Mash the sweet overripe bananas in a bowl until smooth.",
+          "Fold in whole wheat flour, sweetener, and a pinch of cinnamon.",
+          "Bake at 180°C for 35 minutes until golden brown."
+        ]
+      }
+    },
+    {
+      "item_id": "prod_102",
+      "name": "Whole Wheat Baking Flour (1 kg)",
+      "category": "Pantry_Anchor",
+      "is_perishable": false,
+      "tags": [
+        "tag_baking"
+      ],
+      "cost_price": 38.0,
+      "original_price": 55.0,
+      "min_allowed_price": 39.9,
+      "stock_count": 46,
+      "shelf_capacity": 50,
+      "current_stock_pct": 0.92,
+      "freshness_score": 1.0,
+      "freshness_status": "Shelf_Stable",
+      "cv_confidence": 0.98,
+      "recommended_action": "CROSS_MERCH_FULL_PRICE",
+      "recommended_price": 55.0,
+      "bundle_partner_id": "prod_101",
+      "merchandising_note": "Overstocked at 92%. Protect margin—do not markdown alone. Cross-merchandise next to Overripe Bananas under 'Baking' tag.",
+      "approval_status": "APPROVED",
+      "slm_generated": null
+    },
+    {
+      "item_id": "prod_103",
+      "name": "Hass Avocados (Pack of 2)",
+      "category": "Produce",
+      "is_perishable": true,
+      "tags": [
+        "tag_mexican",
+        "tag_breakfast"
+      ],
+      "cost_price": 120.0,
+      "original_price": 250.0,
+      "min_allowed_price": 126.0,
+      "stock_count": 14,
+      "shelf_capacity": 15,
+      "current_stock_pct": 0.9333,
+      "freshness_score": 0.42,
+      "freshness_status": "Overripe",
+      "cv_confidence": 0.91,
+      "recommended_action": "MARKDOWN",
+      "recommended_price": 150.0,
+      "bundle_partner_id": "prod_104",
+      "merchandising_note": "Softening rapidly with 93% stock remaining. Apply 40% markdown (well above ₹126.00 margin floor) and cross-place with Tortilla Chips.",
+      "approval_status": "PENDING",
+      "slm_generated": {
+        "headline": "Flash Sale: Ready-to-Eat Guacamole Night!",
+        "discount_badge": "40% OFF Today Only",
+        "recipe_title": "10-Minute Creamy Avocado Dip",
+        "ingredients": [
+          "2 Ripe Avocados",
+          "1 Lime",
+          "Salt, Pepper & Coriander"
+        ],
+        "instructions": [
+          "Scoop ripe avocados into a bowl and mash with a fork.",
+          "Squeeze fresh lime juice and fold in chopped coriander, salt, and pepper."
+        ]
+      }
+    },
+    {
+      "item_id": "prod_104",
+      "name": "Greek Yogurt Tub (400g)",
+      "category": "Dairy",
+      "is_perishable": true,
+      "tags": [
+        "tag_smoothie",
+        "tag_breakfast",
+        "tag_mexican"
+      ],
+      "cost_price": 65.0,
+      "original_price": 110.0,
+      "min_allowed_price": 68.25,
+      "stock_count": 28,
+      "shelf_capacity": 30,
+      "current_stock_pct": 0.9333,
+      "freshness_score": 0.88,
+      "freshness_status": "Peak",
+      "cv_confidence": 0.96,
+      "recommended_action": "CROSS_MERCH_FULL_PRICE",
+      "recommended_price": 110.0,
+      "bundle_partner_id": "prod_101",
+      "merchandising_note": "Fresh (Peak) but Overstocked (93%). Keep full price to protect margin; bundle with Bananas for a 'Morning Smoothie Bowl' feature.",
+      "approval_status": "PENDING",
+      "slm_generated": {
+        "headline": "Power Breakfast: Greek Yogurt & Banana Smoothie Pack",
+        "discount_badge": "Combo Feature",
+        "recipe_title": "2-Minute High-Protein Berry & Banana Smoothie",
+        "ingredients": [
+          "1 Cup Greek Yogurt",
+          "1 Ripe Banana",
+          "Splash of Milk"
+        ],
+        "instructions": [
+          "Add Greek yogurt and sliced banana to a blender.",
+          "Blend on high for 60 seconds until thick and creamy."
+        ]
+      }
+    },
+    {
+      "item_id": "prod_105",
+      "name": "Roma Tomatoes (1 kg)",
+      "category": "Produce",
+      "is_perishable": true,
+      "tags": [
+        "tag_pasta",
+        "tag_mexican"
+      ],
+      "cost_price": 25.0,
+      "original_price": 50.0,
+      "min_allowed_price": 26.25,
+      "stock_count": 3,
+      "shelf_capacity": 40,
+      "current_stock_pct": 0.075,
+      "freshness_score": 0.92,
+      "freshness_status": "Peak",
+      "cv_confidence": 0.95,
+      "recommended_action": "REPLENISH_STOCK",
+      "recommended_price": 50.0,
+      "bundle_partner_id": null,
+      "merchandising_note": "Critical Low Stock (7.5% bin capacity). Peak freshness—retain full price and alert staff for immediate backroom replenishment.",
+      "approval_status": "PENDING",
+      "slm_generated": null
+    },
+    {
+      "item_id": "prod_106",
+      "name": "Fresh Strawberries Box (250g)",
+      "category": "Produce",
+      "is_perishable": true,
+      "tags": [
+        "tag_smoothie",
+        "tag_breakfast"
+      ],
+      "cost_price": 90.0,
+      "original_price": 180.0,
+      "min_allowed_price": 94.5,
+      "stock_count": 6,
+      "shelf_capacity": 20,
+      "current_stock_pct": 0.3,
+      "freshness_score": 0.12,
+      "freshness_status": "Spoiled",
+      "cv_confidence": 0.89,
+      "recommended_action": "REMOVE_FROM_SHELF",
+      "recommended_price": null,
+      "bundle_partner_id": null,
+      "merchandising_note": "SAFETY GUARDRAIL TRIGGERED: Visible mold/spoilage detected (score 0.12). Markdown blocked. Alert floor staff to remove and log waste immediately.",
+      "approval_status": "APPROVED",
+      "slm_generated": null
+    }
+  ]
+}

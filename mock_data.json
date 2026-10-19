@@ -1,0 +1,41 @@
+[
+  {
+    "item_id": "prod_001",
+    "name": "Avocado",
+    "stock_count": 14,
+    "shelf_capacity": 15,
+    "freshness_score": 0.35,
+    "freshness_stage": "Near Expiry",
+    "cost_price": 40.0,
+    "original_price": 80.0,
+    "recommended_action": "MARKDOWN",
+    "recommended_price": 45.0,
+    "slm_generated": null
+  },
+  {
+    "item_id": "prod_002",
+    "name": "Roma Tomatoes",
+    "stock_count": 48,
+    "shelf_capacity": 50,
+    "freshness_score": 0.95,
+    "freshness_stage": "Peak Fresh",
+    "cost_price": 20.0,
+    "original_price": 40.0,
+    "recommended_action": "BUNDLE",
+    "recommended_price": 40.0,
+    "slm_generated": null
+  },
+  {
+    "item_id": "prod_003",
+    "name": "Bananas",
+    "stock_count": 5,
+    "shelf_capacity": 30,
+    "freshness_score": 0.05,
+    "freshness_stage": "Spoiled",
+    "cost_price": 10.0,
+    "original_price": 25.0,
+    "recommended_action": "DISCARD",
+    "recommended_price": 0.0,
+    "slm_generated": null
+  }
+]

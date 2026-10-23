@@ -1,0 +1,22 @@
+{
+  "image": "sample_data/pic.png",
+  "method": "Hand-counted from the photo. Partly hidden fruit at the bin edges makes totals approximate (about +/-2). The 3 visibly decayed apples are Rotten. Green and red-green apples are counted as Ripe because that colour is the variety, not unripeness. No fruit is clearly Overripe.",
+  "inventory": {
+    "Apple": {
+      "Product_Type": "Apple",
+      "Product_Count": 31,
+      "Ripe_Count": 28,
+      "Unripe_Count": 0,
+      "Overripe_Count": 0,
+      "Rotten_Count": 3
+    },
+    "Orange": {
+      "Product_Type": "Orange",
+      "Product_Count": 12,
+      "Ripe_Count": 12,
+      "Unripe_Count": 0,
+      "Overripe_Count": 0,
+      "Rotten_Count": 0
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# FreshGuard white + crate-green theme (read when Streamlit starts from this folder)
+[theme]
+base = "light"
+primaryColor = "#1F7A4D"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EEF6F0"
+textColor = "#17251D"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

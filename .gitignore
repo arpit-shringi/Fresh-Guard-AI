@@ -1,0 +1,24 @@
+__pycache__/
+.pytest_cache/
+*.pt
+*.h5
+supermarket_meta.db
+uploads/
+outputs/
+.env
+# Environments
+.env
+venv/
+env/
+
+# IDE & Python Cache
+.vscode/
+__pycache__/
+*.pyc
+
+# AI Artifacts
+CLAUDE.md
+
+# Large Models (Optional: only do this if you don't want to upload the heavy .pt files to GitHub)
+# *.pt 
+# *.h5

@@ -1,0 +1,14 @@
+# Dashboard + test-suite (light)
+streamlit>=1.46
+pillow
+numpy
+pytest
+
+# Vision models (heavy). ultralytics pulls in torch + opencv-python.
+# Do NOT also install opencv-python-headless — two OpenCV builds in one env clash.
+ultralytics>=8.3
+tensorflow>=2.16
+tf-keras          # fallback loader for Keras-2 .h5 files (vgg.h5)
+
+# SLM copy generation
+groq>=0.30
